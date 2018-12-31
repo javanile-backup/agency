@@ -1,0 +1,5 @@
+---
+- hosts: agency
+  tasks:
+  - name: ping
+    ping:
