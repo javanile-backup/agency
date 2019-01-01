@@ -9,3 +9,5 @@
     shell:
       cmd: "docker-compose up -d"
       chdir: "agency"
+      environment:
+        AGENCY_PORT: 80
