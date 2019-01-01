@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  lb:
+    build: services/lb
+    ports: ['8080:80']
+    links: ['osticket', 'redmine']
+
+  osticket:
+    image: campbellsoftwaresolutions/osticket
+    ports: ['8081:80']
+    env_file: ['osticket.env']
+    links: ['osticket_db']
+
+  osticket_db:
+    image: mysql:5
+    env_file: ['osticket.env']
+
+  redmine:
+    image: redmine
+    ports: ['8082:3000']
