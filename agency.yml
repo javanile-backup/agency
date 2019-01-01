@@ -1,5 +1,11 @@
 ---
 - hosts: agency
   tasks:
-  - name: ping
-    ping:
+  - name: Clone Codebase
+    git:
+      repo: https://github.com/javanile/agency
+      dest: agency
+  - name: Start Services
+    shell:
+      cmd: "docker-compose up -d"
+      chdir: "agency"
