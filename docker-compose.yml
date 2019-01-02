@@ -16,5 +16,6 @@ services:
     image: mysql:5
     env_file: ['osticket.env']
 
+
   redmine:
     image: redmine

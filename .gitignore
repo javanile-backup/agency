@@ -1,2 +1,4 @@
 .idea/
+volumes/
+!volumes/**/.gitkeep
 .env

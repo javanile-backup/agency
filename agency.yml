@@ -1,13 +1,14 @@
 ---
 - hosts: agency
   tasks:
-  - name: Clone Codebase
+  - name: Clone codebase
     git:
       repo: https://github.com/javanile/agency
       dest: agency
-  - name: Start Services
+  - name: Start services
+    environment:
+      AGENCY_PORT: 80
     shell:
-      cmd: "docker-compose up -d"
-      chdir: "agency"
-      environment:
-        AGENCY_PORT: 80
+      cmd: docker-compose up -d
+      chdir: agency
+    become: yes
