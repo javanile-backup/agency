@@ -10,6 +10,7 @@ services:
   osticket:
     image: campbellsoftwaresolutions/osticket
     env_file: ['osticket.env']
+    environment: ['INSTALL_EMAIL=${ADMIN_EMAIL}']
     links: ['osticket_db']
 
   osticket_db:
