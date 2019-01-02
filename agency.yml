@@ -10,6 +10,6 @@
     environment:
       AGENCY_PORT: 80
     shell:
-      cmd: docker-compose up -d
+      cmd: docker-compose up -d --force-recreate --remove-orphans
       chdir: agency
     become: yes
