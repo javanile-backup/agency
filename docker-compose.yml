@@ -15,7 +15,7 @@ services:
   osticket_db:
     image: mysql:5
     env_file: ['osticket.env']
-
+    volumes: ['./volumes/osticket_db:/var/lib/mysql']
 
   redmine:
     image: redmine

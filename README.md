@@ -24,7 +24,7 @@ into your `/etc/ansible/hosts` files
 then replace `X.X.X.X` with IP of the remote server
 ```ini
 [agency]
-X.X.X.X  ansible_user=agency
+X.X.X.X  ansible_user=agency  ansible_ssh_private_key_file=~/.ssh/agency
 ```
 
 Download on your local machie the agency ansible playbook

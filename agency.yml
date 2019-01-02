@@ -5,6 +5,7 @@
     git:
       repo: https://github.com/javanile/agency
       dest: agency
+      version: master
   - name: Start services
     environment:
       AGENCY_PORT: 80
