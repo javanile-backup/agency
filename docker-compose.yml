@@ -23,4 +23,10 @@ services:
 
   smtp:
     image: namshi/smtp
+    environment: ['GMAIL_USER=${GMAIL_USER}', 'GMAIL_PASSWORD=${GMAIL_PASSWORD}']
 
+  backup:
+    build: javanile/backup
+    volumes:
+      - './backup:/backup/backup'
+      - './osticket.env:/backup/services/osticket'

@@ -22,13 +22,15 @@ $ cat ~/.ssh/agency.pub
 Edit and add the following code 
 into your `/etc/ansible/hosts` files
 then replace `X.X.X.X` with IP of the remote server
-and `admin@example.com` with administrator email
+and `admin@example.com` with administrator email and other variables like smtp, etc...
 ```ini
 [Agency]
 X.X.X.X
 [Agency:vars]
 http_port=80
 admin_email=admin@example.com
+gmail_user=myusername@gmail.com
+gmail_password=mypassword
 ansible_user=agency
 ansible_ssh_private_key_file=~/.ssh/agency
 ```

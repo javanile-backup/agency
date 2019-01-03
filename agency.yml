@@ -10,7 +10,17 @@
     environment:
       HTTP_PORT: '{{http_port}}'
       ADMIN_EMAIL: '{{admin_email}}'
+      GMAIL_USER: '{{gmail_user}}'
+      GMAIL_PASSWORD: '{{gmail_password}}'
     become: yes
     shell:
       cmd: docker-compose down --remove-orphans && docker-compose up -d --force-recreate
       chdir: agency
+  - name: Generic question with multiple different responses
+    expect:
+      command: docker-compose exec backup gdrive-auth
+      responses:
+        Question:
+          - response1
+          - response2
+          - response3
