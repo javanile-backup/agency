@@ -29,4 +29,4 @@ services:
     image: javanile/backup
     volumes:
       - './backup:/backup/backup'
-      - './osticket.env:/backup/services/osticket'
+      - './osticket.env:/backup/service/osticket'

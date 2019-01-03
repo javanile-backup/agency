@@ -44,3 +44,8 @@ Build your agency infrastructure to handle your business
 ```bash
 $ ansible-playbook agency.yml
 ```
+
+Authenticate Google Drive for backup
+```bash
+$ ssh -i ~/.ssh/agency agency@X.X.X.X ./agency/auth-gdrive
+```

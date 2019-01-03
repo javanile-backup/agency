@@ -1,2 +1,2 @@
 
-0 * * * *   backup-mysql osticket gdrive
+0 * * * *   backup osticket mysql gdrive
