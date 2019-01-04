@@ -21,13 +21,17 @@ services:
   xwiki:
     image: xwiki:mysql-tomcat
     env_file: ['xwiki.env']
-    environment: ['INSTALL_EMAIL=${ADMIN_EMAIL}']
     links: ['xwiki_db']
 
   xwiki_db:
-    image: mysql:5
-    env_file: ['osticket.env']
+    build: services/xwiki_db
+    env_file: ['xwiki.env']
     volumes: ['./volumes/xwiki_db:/var/lib/mysql']
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports: ['50000:5000']
+    volumes: ['./volumes/jenkins:/var/jenkins_home']
 
   smtp:
     image: namshi/smtp
