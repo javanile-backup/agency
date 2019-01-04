@@ -5,7 +5,7 @@ services:
   lb:
     build: services/lb
     ports: ['${HTTP_PORT}:80']
-    links: ['osticket', 'redmine']
+    links: ['osticket', 'xwiki']
 
   osticket:
     image: campbellsoftwaresolutions/osticket
@@ -18,8 +18,16 @@ services:
     env_file: ['osticket.env']
     volumes: ['./volumes/osticket_db:/var/lib/mysql']
 
-  redmine:
-    image: redmine
+  xwiki:
+    image: xwiki:mysql-tomcat
+    env_file: ['xwiki.env']
+    environment: ['INSTALL_EMAIL=${ADMIN_EMAIL}']
+    links: ['xwiki_db']
+
+  xwiki_db:
+    image: mysql:5
+    env_file: ['osticket.env']
+    volumes: ['./volumes/xwiki_db:/var/lib/mysql']
 
   smtp:
     image: namshi/smtp
