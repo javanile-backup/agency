@@ -2,3 +2,4 @@
 volumes/
 !volumes/**/.gitkeep
 .env
+*.retry
