@@ -6,10 +6,11 @@
       repo: https://github.com/javanile/agency
       dest: agency
       version: master
+      force: yes
   - name: Update Environment
     copy:
       dest: agency/.env
-      content: >
+      content: |
         HTTP_PORT={{http_port}}
         ADMIN_EMAIL={{admin_email}}
         GMAIL_USER={{gmail_user}}
