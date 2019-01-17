@@ -1,5 +1,8 @@
 .idea/
 volumes/
-!volumes/**/.gitkeep
+!volumes/jenkins/.gitkeep
+!volumes/osticket/.gitkeep
+!volumes/osticket_db/.gitkeep
+!volumes/xwiki_db/.gitkeep
 .env
 *.retry
