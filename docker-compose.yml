@@ -11,7 +11,7 @@ services:
     image: campbellsoftwaresolutions/osticket
     env_file: ['osticket.env']
     environment: ['INSTALL_EMAIL=${ADMIN_EMAIL}']
-    links: ['osticket_db']
+    links: ['osticket_db', 'smtp']
 
   osticket_db:
     image: mysql:5
